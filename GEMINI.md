@@ -1,7 +1,7 @@
-# Project: Shangdong Li Portfolio
+# Project: Stone Portfolio
 
 ## Overview
-This project is a personal portfolio website for Shangdong Li, designed to be presented to university admissions officers. It showcases a multidisciplinary background in **Technology**, **Music Performance**, and **Music Technology**.
+This project is a personal portfolio website for Stone, designed to be presented to university admissions officers. It showcases a multidisciplinary background in **Technology**, **Music Performance**, and **Music Technology**.
 
 The core philosophy of the portfolio is to demonstrate how technical and musical abilities are applied to solve real-world problems.
 

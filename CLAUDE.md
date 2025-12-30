@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a static personal portfolio website for Shangdong Li, designed for university admissions. The site is a Single Page Application (SPA) showcasing three main areas: Technology, Performance, and Music Technology.
+This is a static personal portfolio website for Stone, designed for university admissions. The site is a Single Page Application (SPA) showcasing three main areas: Technology, Performance, and Music Technology.
 
 ## Architecture
 

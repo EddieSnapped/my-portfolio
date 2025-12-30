@@ -1,5 +1,5 @@
 {
-  "name": "shangdong-li-portfolio",
+  "name": "stone-portfolio",
   "version": "1.0.0",
   "description": "Professional portfolio showcasing technology, music performance, and music technology expertise",
   "type": "module",
@@ -19,7 +19,7 @@
     "web-audio",
     "data-visualization"
   ],
-  "author": "Shangdong Li",
+  "author": "Stone",
   "license": "MIT",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.0.0",

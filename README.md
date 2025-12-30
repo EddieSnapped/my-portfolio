@@ -1,4 +1,4 @@
-# Shangdong Li - Professional Portfolio
+# Stone - Professional Portfolio
 
 A modern, high-performance portfolio website showcasing multidisciplinary expertise in **Technology**, **Music Performance**, and **Music Technology Innovation**. Built with modern web technologies and optimized for university admissions presentations.
 
@@ -196,4 +196,4 @@ The project showcases not just what I've built, but how I think about solving pr
 
 ---
 
-**Built with passion for innovation and excellence** | *Shangdong Li, 2024*
+**Built with passion for innovation and excellence** | *Stone, 2024*

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "shangdong-li-portfolio",
+  "name": "stone-portfolio",
   "builds": [
     {
       "src": "package.json",
