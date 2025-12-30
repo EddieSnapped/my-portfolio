@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shangdong Li | Multidisciplinary Portfolio</title>
+    <meta name="description" content="Portfolio showcasing expertise in technology, music performance, and music technology - demonstrating interdisciplinary problem-solving capabilities">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shangdong-li.dev/">
+    <meta property="og:title" content="Shangdong Li | Multidisciplinary Portfolio">
+    <meta property="og:description" content="Technology × Music × Innovation">
+    <meta property="og:image" content="/assets/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://shangdong-li.dev/">
+    <meta property="twitter:title" content="Shangdong Li | Multidisciplinary Portfolio">
+    <meta property="twitter:description" content="Technology × Music × Innovation">
+    <meta property="twitter:image" content="/assets/og-image.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./styles/tokens.css">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/components.css">
+    <link rel="stylesheet" href="./styles/pages.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Shangdong Li",
+      "url": "https://shangdong-li.dev",
+      "jobTitle": "Multidisciplinary Engineer & Musician",
+      "description": "Technology × Music × Innovation",
+      "knowsAbout": ["Deep Learning", "Music Technology", "Web Development", "Audio Processing", "Performance"]
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip Navigation Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Screen Reader Announcer -->
+    <div id="page-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="container nav__container">
+            <div class="nav__logo">SHANGDONG LI</div>
+            <div class="nav__links">
+                <button class="nav__button active" data-nav-button="tech" aria-pressed="true">
+                    Technology
+                    <span class="sr-only">(Current section)</span>
+                </button>
+                <button class="nav__button" data-nav-button="performance" aria-pressed="false">
+                    Performance
+                </button>
+                <button class="nav__button" data-nav-button="music-tech" aria-pressed="false">
+                    Music Tech
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Technology Section -->
+        <section id="tech-page" class="page-section active" aria-hidden="false">
+            <div class="hero">
+                <div class="container">
+                    <h1>Engineering Solutions</h1>
+                    <p class="hero__subtitle">Using algorithms and data to solve real-world problems in biology, industry, and audio processing.</p>
+                    
+                    <!-- Performance Metrics Chart -->
+                    <div class="chart-container animate-on-scroll">
+                        <canvas id="rave-chart" class="chart-canvas"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="grid grid--2">
+                    <!-- Deep Learning Research -->
+                    <div class="card animate-on-scroll">
+                        <span class="card__tag">Deep Learning</span>
+                        <h3 class="card__title">RAVE Audio Synthesis Research</h3>
+                        <p class="card__description">
+                            Researching latency optimization in neural audio generation. Achieved 0.23 real-time factor 
+                            with spectral reconstruction loss of 0.142.
+                        </p>
+                        <ul>
+                            <li>Created smooth transitions between rain sound intensities</li>
+                            <li>Optimized model architecture for real-time performance</li>
+                            <li>Published error convergence analysis for SVM and Perceptron algorithms</li>
+                        </ul>
+                        <a href="#" class="btn btn--primary">View Research</a>
+                    </div>
+
+                    <!-- Skills Radar Chart -->
+                    <div class="chart-container animate-on-scroll">
+                        <canvas id="skills-chart" class="chart-canvas"></canvas>
+                    </div>
+                </div>
+
+                <div class="grid grid--3">
+                    <div class="card animate-on-scroll">
+                        <span class="card__tag">Computer Vision</span>
+                        <h3 class="card__title">Bio-Informatics (Kaggle)</h3>
+                        <p class="card__description">
+                            3D cell reconstruction from microscopy images using advanced computer vision techniques.
+                        </p>
+                        <a href="#" class="btn btn--secondary">View Project</a>
+                    </div>
+
+                    <div class="card animate-on-scroll">
+                        <span class="card__tag">Industrial AI</span>
+                        <h3 class="card__title">Predictive Maintenance System</h3>
+                        <p class="card__description">
+                            Machine learning pipeline for industrial equipment failure prediction.
+                        </p>
+                        <a href="#" class="btn btn--secondary">View Project</a>
+                    </div>
+
+                    <div class="card animate-on-scroll">
+                        <span class="card__tag">Web Technology</span>
+                        <h3 class="card__title">Full-Stack Applications</h3>
+                        <p class="card__description">
+                            Modern web applications with focus on performance and user experience.
+                        </p>
+                        <a href="#" class="btn btn--secondary">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project Timeline -->
+                <div class="chart-container animate-on-scroll">
+                    <canvas id="timeline-chart" class="chart-canvas"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Performance Section -->
+        <section id="performance-page" class="page-section" aria-hidden="true">
+            <div class="hero hero--performance">
+                <div class="container">
+                    <h1>Musical Performance</h1>
+                    <p class="hero__subtitle">Jazz improvisation, classical foundation, and orchestral excellence.</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="grid grid--2">
+                    <div class="card animate-on-scroll">
+                        <span class="card__tag">Piano</span>
+                        <h3 class="card__title">Jazz Improvisation</h3>
+                        <p class="card__description">
+                            Advanced jazz piano performance with focus on improvisation and harmonic exploration.
+                        </p>
+                        <a href="#" class="btn btn--primary">Listen to Recordings</a>
+                    </div>
+
+                    <div class="card animate-on-scroll">
+                        <span class="card__tag">Clarinet</span>
+                        <h3 class="card__title">Orchestral Performance</h3>
+                        <p class="card__description">
+                            Principal clarinet experience in symphony orchestras and chamber ensembles.
+                        </p>
+                        <a href="#" class="btn btn--primary">View Performances</a>
+                    </div>
+                </div>
+
+                <div class="card animate-on-scroll">
+                    <span class="card__tag">Music Theory</span>
+                    <h3 class="card__title">Classical Foundation</h3>
+                    <p class="card__description">
+                        Comprehensive training in music theory, analysis, and composition providing the foundation 
+                        for both performance and technological innovation.
+                    </p>
+                    <a href="#" class="btn btn--secondary">View Compositions</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Music Technology Section -->
+        <section id="music-tech-page" class="page-section music-tech-theme" aria-hidden="true">
+            <div class="hero hero--music-tech">
+                <div class="container">
+                    <h1>Music × Technology</h1>
+                    <p class="hero__subtitle">Developing technology solutions for social good and musical innovation.</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="grid grid--2">
+                    <div class="card animate-on-scroll">
+                        <span class="card__tag">Accessibility</span>
+                        <h3 class="card__title">Hearing Accessibility Solutions</h3>
+                        <p class="card__description">
+                            Developing assistive technology to improve musical accessibility for the hearing impaired.
+                        </p>
+                        <a href="#" class="btn btn--primary">Learn More</a>
+                    </div>
+
+                    <div class="card animate-on-scroll">
+                        <span class="card__tag">Healthcare</span>
+                        <h3 class="card__title">Alzheimer's Music Therapy</h3>
+                        <p class="card__description">
+                            Technology-assisted music therapy solutions for cognitive rehabilitation.
+                        </p>
+                        <a href="#" class="btn btn--primary">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="grid grid--3">
+                    <div class="card animate-on-scroll">
+                        <span class="card__tag">Audio Processing</span>
+                        <h3 class="card__title">Real-time Audio Effects</h3>
+                        <p class="card__description">Web Audio API implementations for live performance.</p>
+                        <a href="#" class="btn btn--secondary">Try Demo</a>
+                    </div>
+
+                    <div class="card animate-on-scroll">
+                        <span class="card__tag">Composition</span>
+                        <h3 class="card__title">Algorithmic Composition</h3>
+                        <p class="card__description">AI-assisted composition tools and generative music systems.</p>
+                        <a href="#" class="btn btn--secondary">Listen</a>
+                    </div>
+
+                    <div class="card animate-on-scroll">
+                        <span class="card__tag">Education</span>
+                        <h3 class="card__title">Music Learning Platform</h3>
+                        <p class="card__description">Interactive platforms for music education and skill development.</p>
+                        <a href="#" class="btn btn--secondary">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
