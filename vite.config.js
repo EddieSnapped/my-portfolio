@@ -5,18 +5,10 @@ export default defineConfig({
   build: {
     outDir: '../dist',
     emptyOutDir: true,
-    sourcemap: true,
-    rollupOptions: {
-      input: {
-        main: 'src/index.html'
-      }
-    }
+    sourcemap: true
   },
   server: {
     port: 3000,
     open: true
-  },
-  css: {
-    devSourcemap: true
   }
 })

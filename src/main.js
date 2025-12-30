@@ -1,12 +1,10 @@
 import { NavigationManager } from './components/NavigationManager.js'
-import { DataVisualization } from './components/DataVisualization.js'
-import { AnimationManager } from './components/AnimationManager.js'
+import { SimpleVisualization } from './components/SimpleVisualization.js'
 
 class PortfolioApp {
   constructor() {
     this.navigation = null
-    this.dataViz = null
-    this.animations = null
+    this.visualization = null
     this.init()
   }
 
@@ -21,55 +19,18 @@ class PortfolioApp {
 
       // Initialize components
       this.navigation = new NavigationManager()
-      this.animations = new AnimationManager()
       
-      // Initialize data visualization after a short delay to ensure DOM is ready
+      // Initialize visualization after a short delay
       setTimeout(() => {
-        this.dataViz = new DataVisualization()
-        this.animations.animateChartEntry()
-      }, 500)
+        this.visualization = new SimpleVisualization()
+      }, 300)
 
-      // Setup performance monitoring
-      this.setupPerformanceMonitoring()
-      
-      // Setup error handling
-      this.setupErrorHandling()
-      
       console.log('Portfolio application initialized successfully')
       
     } catch (error) {
       console.error('Failed to initialize portfolio application:', error)
       this.handleInitializationError(error)
     }
-  }
-
-  setupPerformanceMonitoring() {
-    // Monitor Core Web Vitals (placeholder for future implementation)
-    if (import.meta.env.PROD) {
-      // In production, you can add web-vitals library
-      console.log('Performance monitoring enabled')
-    }
-
-    // Monitor resource loading
-    window.addEventListener('load', () => {
-      const navigationTiming = performance.getEntriesByType('navigation')[0]
-      console.log('Page load metrics:', {
-        domContentLoaded: navigationTiming.domContentLoadedEventEnd - navigationTiming.domContentLoadedEventStart,
-        loadComplete: navigationTiming.loadEventEnd - navigationTiming.loadEventStart
-      })
-    })
-  }
-
-  setupErrorHandling() {
-    window.addEventListener('error', (event) => {
-      console.error('Global error:', event.error)
-      this.reportError('JavaScript Error', event.error)
-    })
-
-    window.addEventListener('unhandledrejection', (event) => {
-      console.error('Unhandled promise rejection:', event.reason)
-      this.reportError('Promise Rejection', event.reason)
-    })
   }
 
   handleInitializationError(error) {
@@ -88,18 +49,10 @@ class PortfolioApp {
     }
   }
 
-  reportError(type, error) {
-    // In production, this would send to error reporting service
-    if (import.meta.env.PROD) {
-      // analytics.track('Error', { type, message: error.message })
-    }
-  }
-
   destroy() {
-    // Cleanup method for SPA navigation or testing
-    this.dataViz?.destroy()
+    // Cleanup method
     this.navigation = null
-    this.animations = null
+    this.visualization = null
   }
 }
 

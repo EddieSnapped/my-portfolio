@@ -194,21 +194,136 @@
   position: relative;
 }
 
-.chart-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(197, 160, 101, 0.05), rgba(44, 62, 80, 0.05));
-  border-radius: var(--border-radius-xl);
-  pointer-events: none;
+.chart-container h3 {
+  margin-bottom: var(--space-4);
+  color: var(--text-primary);
+  font-size: var(--font-size-lg);
 }
 
-.chart-canvas {
+/* Simple Bar Chart */
+.simple-chart {
+  width: 100%;
+}
+
+.chart-bars {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 200px;
+  margin-bottom: var(--space-4);
+  padding: 0 var(--space-2);
+}
+
+.bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.bar {
+  width: 30px;
+  background: linear-gradient(to top, var(--accent-700), var(--accent-600));
+  border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0;
+  margin-bottom: var(--space-2);
+  transition: all var(--transition-normal);
   position: relative;
-  z-index: 1;
+}
+
+.bar.active {
+  background: linear-gradient(to top, var(--primary-700), var(--primary-600));
+  transform: scale(1.1);
+}
+
+.bar::after {
+  content: attr(data-value) '%';
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.bar-label {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.chart-info {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border-light);
+}
+
+.metric {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+/* Skills Chart */
+.skills-chart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-name {
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.skill-value {
+  font-size: var(--font-size-sm);
+  color: var(--accent-700);
+  font-weight: 600;
+}
+
+.skill-bar {
+  height: 8px;
+  background: var(--bg-tertiary);
+  border-radius: var(--border-radius-full);
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-700), var(--accent-600));
+  border-radius: var(--border-radius-full);
+  transition: width 1s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chart-bars {
+    height: 150px;
+  }
+  
+  .bar {
+    width: 20px;
+  }
+  
+  .chart-info {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
 }
 
 /* Responsive Design */
