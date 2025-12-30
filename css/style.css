@@ -1,0 +1,83 @@
+/* --- 核心配色与排版 --- */
+:root {
+    --primary: #2C3E50;       /* 深石板灰：用于导航和标题 */
+    --accent: #C5A065;        /* 暗金：用于强调和按钮 */
+    --bg-light: #F9F9FB;      /* 浅灰背景 */
+    --bg-dark: #1E293B;       /* 深色背景：用于音乐科技页 */
+    --text-main: #333;
+    --text-light: #94A3B8;
+}
+
+body { font-family: 'Roboto', sans-serif; margin: 0; background: var(--bg-light); color: var(--text-main); }
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+/* --- 导航栏 --- */
+nav {
+    background: #fff;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.nav-logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); letter-spacing: 1px; }
+.nav-links { display: flex; gap: 2rem; }
+.nav-btn {
+    background: none;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    color: var(--text-main);
+    transition: 0.3s;
+    border-bottom: 2px solid transparent;
+}
+.nav-btn:hover, .nav-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* --- 页面容器控制 --- */
+.page-section { display: none; opacity: 0; transition: opacity 0.5s ease; padding-bottom: 5rem; }
+.page-section.active { display: block; opacity: 1; }
+
+/* --- 通用组件样式 --- */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.hero { padding: 6rem 0; text-align: center; }
+.hero h1 { font-size: 3rem; margin-bottom: 1rem; color: var(--primary); }
+.hero p { font-size: 1.25rem; color: #666; max-width: 700px; margin: 0 auto; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-bottom: 4rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+
+.card { background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border-top: 3px solid var(--primary); }
+.card h3 { margin-top: 0; color: var(--primary); }
+.tag { background: #E2E8F0; padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; color: #64748B; margin-bottom: 1rem; display: inline-block; }
+
+/* --- 图片占位符样式 --- */
+.img-placeholder {
+    background-color: #E2E8F0;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748B;
+    font-weight: 500;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    border: 2px dashed #CBD5E1;
+    transition: all 0.3s;
+}
+.img-placeholder:hover { border-color: var(--accent); color: var(--accent); background: #fff; }
+.img-placeholder.tall { height: 400px; } /* 竖图专用 */
+
+/* --- 特定页面样式修正 --- */
+/* 音乐科技页：暗色主题 */
+#music-tech-page { background-color: var(--bg-dark); color: #E2E8F0; min-height: 100vh; }
+#music-tech-page .hero h1 { color: #fff; }
+#music-tech-page .hero p { color: #94A3B8; }
+#music-tech-page .card { background: #2D3748; border-top-color: var(--accent); color: #E2E8F0; }
+#music-tech-page .card h3 { color: #fff; }
+#music-tech-page .img-placeholder { background: #475569; border-color: #64748B; color: #CBD5E1; }
