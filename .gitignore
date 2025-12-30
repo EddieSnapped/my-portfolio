@@ -42,3 +42,29 @@ coverage/
 .cache/
 .parcel-cache/
 .vite/
+
+# Portfolio-specific
+.vercel/
+*.tgz
+*.tar.gz
+
+# Backup files
+*.backup
+*.bak
+*~
+
+# Editor files
+*.swp
+*.swo
+
+# macOS
+.AppleDouble
+.LSOverride
+Icon?
+
+# Windows
+Desktop.ini
+$RECYCLE.BIN/
+
+# Deployment
+.now/

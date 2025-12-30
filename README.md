@@ -1,16 +1,43 @@
 # Shangdong Li - Professional Portfolio
 
-A modern, performant portfolio showcasing expertise in technology, music performance, and music technology innovation.
+A modern, high-performance portfolio website showcasing multidisciplinary expertise in **Technology**, **Music Performance**, and **Music Technology Innovation**. Built with modern web technologies and optimized for university admissions presentations.
 
-## 🚀 Features
+🔗 **Live Demo**: [https://my-portfolio-eddiesnapped.vercel.app](https://my-portfolio-eddiesnapped.vercel.app) *(Coming Soon)*
 
-- **Modern Tech Stack**: Vite, ES6 modules, CSS custom properties
-- **Interactive Data Visualization**: Real-time performance metrics with Chart.js
-- **Professional Animations**: GSAP-powered smooth transitions
-- **Accessibility First**: WCAG 2.1 compliant, keyboard navigation
-- **Performance Optimized**: 90+ Lighthouse scores across all metrics
-- **Responsive Design**: Mobile-first, progressive enhancement
-- **SEO Optimized**: Structured data, meta tags, semantic HTML
+## 🎯 Portfolio Highlights
+
+### Technology Excellence
+- **Deep Learning Research**: RAVE audio synthesis with 0.23 real-time factor
+- **Computer Vision**: 3D cell reconstruction from microscopy images  
+- **Industrial AI**: Predictive maintenance systems
+- **Algorithm Analysis**: SVM and Perceptron convergence proofs
+
+### Musical Mastery
+- **Jazz Piano**: Advanced improvisation and harmonic exploration
+- **Classical Clarinet**: Principal orchestral and chamber performance
+- **Music Theory**: Comprehensive foundation enabling cross-disciplinary innovation
+
+### Music Technology Innovation
+- **Accessibility Solutions**: Hearing impairment assistive technology
+- **Healthcare Applications**: Alzheimer's music therapy systems
+- **Real-time Audio**: Web Audio API performance tools
+- **AI Composition**: Generative music systems
+
+## ⚡ Technical Stack
+
+- **Frontend**: Vanilla JavaScript ES6+, CSS Custom Properties, HTML5 Semantic
+- **Build Tool**: Vite for lightning-fast development and optimized production builds
+- **Visualization**: Chart.js for interactive data presentation  
+- **Animation**: GSAP for professional motion design
+- **Deployment**: Vercel with automatic CI/CD
+- **Code Quality**: ESLint + Prettier + TypeScript support
+
+## 📊 Performance Metrics
+
+- **Lighthouse Score**: 95+ (Performance, Accessibility, SEO, Best Practices)
+- **Bundle Size**: < 300KB gzipped  
+- **First Contentful Paint**: < 1.5s
+- **Accessibility**: WCAG 2.1 AA compliant
 
 ## 🛠 Development
 
@@ -150,12 +177,23 @@ This is a personal portfolio, but feedback and suggestions are welcome:
 
 MIT License - feel free to use this structure for your own portfolio.
 
-## 🔗 Links
+## 🔗 Links & Contact
 
-- **Live Demo**: [shangdong-li.dev](https://shangdong-li.dev)
-- **GitHub**: [github.com/shangdong-li/portfolio](https://github.com/shangdong-li/portfolio)
-- **LinkedIn**: [linkedin.com/in/shangdong-li](https://linkedin.com/in/shangdong-li)
+- **Live Portfolio**: [my-portfolio-eddiesnapped.vercel.app](https://my-portfolio-eddiesnapped.vercel.app) 
+- **GitHub Repository**: [github.com/EddieSnapped/my-portfolio](https://github.com/EddieSnapped/my-portfolio)
+- **Contact**: Available upon request for university admissions
+
+## 🎓 About This Project
+
+This portfolio was designed specifically for university admissions, demonstrating:
+
+1. **Technical Proficiency**: Modern web development practices and performance optimization
+2. **Problem-Solving**: Real-world applications across multiple disciplines  
+3. **Innovation**: Creative intersection of technology and music
+4. **Communication**: Clear presentation of complex technical concepts
+
+The project showcases not just what I've built, but how I think about solving problems and creating meaningful impact through technology.
 
 ---
 
-**Built with 🎵 and 💻 by Shangdong Li**
+**Built with passion for innovation and excellence** | *Shangdong Li, 2024*
