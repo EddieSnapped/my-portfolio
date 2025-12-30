@@ -14,12 +14,12 @@ export class AnimationManager {
 
   setupPageTransitions() {
     gsap.registerEffect({
-      name: "pageSlide",
+      name: 'pageSlide',
       effect: (targets, config) => {
         const tl = gsap.timeline()
         tl.fromTo(targets, 
           { opacity: 0, x: config.direction * 50 },
-          { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }
+          { opacity: 1, x: 0, duration: 0.6, ease: 'power2.out' }
         )
         return tl
       },
@@ -41,11 +41,11 @@ export class AnimationManager {
           opacity: 1, 
           y: 0, 
           duration: 0.8,
-          ease: "power2.out",
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: element,
-            start: "top 80%",
-            toggleActions: "play none none reverse"
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
           }
         }
       )
@@ -59,7 +59,7 @@ export class AnimationManager {
           scale: 1.02,
           y: -5,
           duration: 0.3,
-          ease: "power2.out"
+          ease: 'power2.out'
         })
       })
 
@@ -68,7 +68,7 @@ export class AnimationManager {
           scale: 1,
           y: 0,
           duration: 0.3,
-          ease: "power2.out"
+          ease: 'power2.out'
         })
       })
     })
@@ -81,18 +81,18 @@ export class AnimationManager {
       opacity: 0,
       x: -30,
       duration: 0.3,
-      ease: "power2.in"
+      ease: 'power2.in'
     })
-    .fromTo(toPage, 
-      { opacity: 0, x: 30 },
-      { 
-        opacity: 1, 
-        x: 0, 
-        duration: 0.4, 
-        ease: "power2.out" 
-      }, 
-      "-=0.1"
-    )
+      .fromTo(toPage, 
+        { opacity: 0, x: 30 },
+        { 
+          opacity: 1, 
+          x: 0, 
+          duration: 0.4, 
+          ease: 'power2.out' 
+        }, 
+        '-=0.1'
+      )
 
     return tl
   }
@@ -104,7 +104,7 @@ export class AnimationManager {
         scale: 1, 
         opacity: 1, 
         duration: 0.8, 
-        ease: "back.out(1.7)" 
+        ease: 'back.out(1.7)' 
       }
     )
   }
@@ -117,15 +117,15 @@ export class AnimationManager {
       opacity: 0.7,
       duration: 0.4,
       stagger: 0.1,
-      ease: "power2.inOut"
+      ease: 'power2.inOut'
     })
-    .to('.loading-dot', {
-      scale: 1,
-      opacity: 1,
-      duration: 0.4,
-      stagger: 0.1,
-      ease: "power2.inOut"
-    })
+      .to('.loading-dot', {
+        scale: 1,
+        opacity: 1,
+        duration: 0.4,
+        stagger: 0.1,
+        ease: 'power2.inOut'
+      })
 
     return tl
   }
