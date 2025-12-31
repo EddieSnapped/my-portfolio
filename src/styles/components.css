@@ -35,7 +35,7 @@
   padding: var(--space-3) var(--space-6);
   font-size: var(--font-size-base);
   font-weight: 500;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   cursor: pointer;
   border-radius: var(--border-radius-lg);
   transition: all var(--transition-fast);
