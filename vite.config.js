@@ -3,7 +3,6 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   root: 'src',
   base: './', // 确保相对路径，避免部署后路径问题
-  publicDir: '../assets', // 指定assets文件夹作为公共资源目录
   build: {
     outDir: '../dist',
     emptyOutDir: true,
