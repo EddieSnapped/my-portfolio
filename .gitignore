@@ -69,5 +69,8 @@ $RECYCLE.BIN/
 # Deployment
 .now/
 
+# Project files
+TODO.md
+
 # others
 /docs
