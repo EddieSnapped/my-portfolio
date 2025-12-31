@@ -326,6 +326,122 @@
   }
 }
 
+/* Section Headers */
+.section-header {
+  text-align: center;
+  margin: var(--space-16) 0 var(--space-8);
+}
+
+.section-header h2 {
+  font-size: var(--font-size-3xl);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.section-header p {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Enhanced Cards */
+.card.featured {
+  border: 2px solid var(--accent-700);
+  background: linear-gradient(135deg, var(--bg-primary) 0%, rgba(197, 160, 101, 0.02) 100%);
+}
+
+.card__metrics,
+.card__achievements,
+.card__impact {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-light);
+  flex-wrap: wrap;
+}
+
+.metric,
+.achievement,
+.impact-stat {
+  background: var(--accent-700);
+  color: white;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.achievement {
+  background: var(--primary-700);
+}
+
+.impact-stat {
+  background: linear-gradient(135deg, var(--accent-700), var(--accent-600));
+}
+
+/* Technology Tags */
+.card__tech {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.tech-tag {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  border: 1px solid var(--border-medium);
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.skill-category {
+  background: var(--bg-primary);
+  padding: var(--space-6);
+  border-radius: var(--border-radius-xl);
+  border: 1px solid var(--border-light);
+}
+
+.skill-category h4 {
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.skill-item {
+  background: var(--accent-700);
+  color: white;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--border-radius-lg);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  transition: transform var(--transition-fast);
+}
+
+.skill-item:hover {
+  transform: translateY(-2px);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .nav__links {
