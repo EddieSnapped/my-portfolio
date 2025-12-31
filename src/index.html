@@ -36,47 +36,238 @@
         <section id="tech-page" class="page-section active">
             <div class="hero">
                 <div class="container">
-                    <h1>Engineering Solutions</h1>
-                    <p class="hero__subtitle">Using algorithms and data to solve real-world problems in biology, industry, and audio processing.</p>
+                    <h1>Technology & Innovation</h1>
+                    <p class="hero__subtitle">From machine learning research to AI-powered cultural preservation, using technology to solve real-world problems</p>
                 </div>
             </div>
 
             <div class="container">
-                <!-- Research & Development -->
+                <!-- Activity Overview Grid -->
                 <div class="section-header">
-                    <h2>Research & Development</h2>
-                    <p>Cutting-edge research in machine learning and computer vision</p>
+                    <h2>Project Overview</h2>
+                    <p>Interdisciplinary technology projects combining artificial intelligence, machine learning, and cultural heritage</p>
                 </div>
 
-                <!-- RAVE Performance Chart -->
-                <div class="chart-container">
-                    <h3>RAVE Model Training Progress</h3>
-                    <canvas id="rave-chart"></canvas>
+                <div class="grid grid--4">
+                    <div class="activity-card">
+                        <div class="activity-icon tech-icon"></div>
+                        <h4>AI Year Painting Project</h4>
+                        <p>Cultural Heritage × Deep Learning</p>
+                        <span class="activity-period">Nov 2024 - Dec 2024</span>
+                    </div>
+                    <div class="activity-card">
+                        <div class="activity-icon research-icon"></div>
+                        <h4>Machine Learning Research</h4>
+                        <p>Pioneer Academics Program</p>
+                        <span class="activity-period">Jun 2024 - Sep 2024</span>
+                    </div>
+                    <div class="activity-card">
+                        <div class="activity-icon trophy-icon"></div>
+                        <h4>Kaggle Competition</h4>
+                        <p>3D Object Detection Top 22/390+</p>
+                        <span class="activity-period">Mar 2024 - Jun 2024</span>
+                    </div>
+                    <div class="activity-card">
+                        <div class="activity-icon industry-icon"></div>
+                        <h4>Industry Collaboration</h4>
+                        <p>Abbott Shanghai & Huawei</p>
+                        <span class="activity-period">Mar 2024 - Feb 2025</span>
+                    </div>
                 </div>
 
-                <div class="grid grid--2">
-                    <!-- Deep Learning Research -->
-                    <div class="card featured">
-                        <span class="card__tag">Deep Learning</span>
-                        <h3>RAVE Audio Synthesis Research</h3>
-                        <p>Researching latency optimization in neural audio generation. Achieved <strong>0.23 real-time factor</strong> with spectral reconstruction loss of <strong>0.142</strong>.</p>
-                        <ul>
-                            <li>Created smooth transitions between rain sound intensities</li>
-                            <li>Optimized model architecture for real-time performance</li>
-                            <li>Published error convergence analysis for SVM and Perceptron algorithms</li>
-                            <li>Implemented custom loss functions for audio quality</li>
-                        </ul>
-                        <div class="card__metrics">
-                            <span class="metric">Real-time Factor: <strong>0.23</strong></span>
-                            <span class="metric">Training Time: <strong>48 hours</strong></span>
-                            <span class="metric">Model Size: <strong>12.4MB</strong></span>
+                <!-- Detailed Project Timeline -->
+                <div class="section-header">
+                    <h2>Detailed Project Stories</h2>
+                    <p>In-depth exploration and technical implementation process of each project</p>
+                </div>
+
+                <!-- Project 1: AI Year Painting -->
+                <div class="project-story">
+                    <div class="project-story__header">
+                        <span class="project-story__tag">AI + Cultural Heritage</span>
+                        <h3>"Year Painting Studio" - AI-Powered Cultural Heritage Preservation Project</h3>
+                        <p class="project-story__subtitle">Combining traditional culture with modern AI technology to innovatively protect and inherit Chinese New Year painting art</p>
+                    </div>
+                    
+                    <div class="project-story__content">
+                        <div class="project-story__images">
+                            <img src="assets/images/ai_year_painting_architecture.png" alt="ADAST Model Architecture" class="project-image">
+                            <img src="assets/images/ai_demo_interface.png" alt="Demo Interface" class="project-image">
+                        </div>
+                        
+                        <div class="project-story__text">
+                            <h4>Project Background & Motivation</h4>
+                            <p>Traditional Chinese New Year paintings represent one of China's most widely recognized national intangible cultural heritage projects, but they face inheritance challenges in modern society. We chose to use AI technology to empower New Year painting creation, allowing intangible cultural heritage to connect with modern life and continue the vitality and joy of traditional culture through innovative expressions.</p>
+                            
+                            <h4>Technical Innovation</h4>
+                            <p>We proposed an Adaptive Deep Attention Style Transfer model (ADAST), combining Convolutional Neural Networks (CNN) with VGG-19 pre-trained models. The model combines low-level texture information with high-level semantic information at each layer through adaptive attention normalization (AdaAttN) modules to achieve precise style transfer.</p>
+                            
+                            <h4>Dataset & Training</h4>
+                            <p>Using the MSCOCO dataset (approximately 330,000 images) for content images and the WikiArt dataset (approximately 81,000 artworks) for style images. All images are uniformly loaded as 512×512 and randomly cropped to 256×256 for data augmentation, ensuring the model can handle diverse input content.</p>
+                            
+                            <h4>Practical Application Results</h4>
+                            <p>The project successfully created a user-friendly interface allowing users to upload daily photos and select New Year painting styles, generating personalized New Year painting works in seconds. The system not only maintains the artistic characteristics of traditional New Year paintings but also incorporates modern elements, achieving perfect integration of cultural inheritance and innovation.</p>
                         </div>
                     </div>
+                    
+                    <div class="project-story__tech">
+                        <h4>Technology Stack</h4>
+                        <div class="tech-stack">
+                            <span class="tech-tag">CNN</span>
+                            <span class="tech-tag">VGG-19</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">MSCOCO</span>
+                            <span class="tech-tag">WikiArt</span>
+                            <span class="tech-tag">Style Transfer</span>
+                        </div>
+                    </div>
+                </div>
 
-                    <!-- Skills Chart -->
-                    <div class="chart-container">
-                        <h3>Technical & Musical Expertise</h3>
-                        <canvas id="skills-chart"></canvas>
+                <!-- Project 2: ML Research -->
+                <div class="project-story">
+                    <div class="project-story__header">
+                        <span class="project-story__tag">Machine Learning Research</span>
+                        <h3>Robustness and Vulnerability of Perceptrons and Support Vector Machines</h3>
+                        <p class="project-story__subtitle">Deep exploration of theoretical foundations and practical performance of linear classification algorithms, achieving Grade A in Pioneer Academics research project</p>
+                    </div>
+                    
+                    <div class="project-story__content">
+                        <div class="project-story__images">
+                            <img src="assets/images/svm_diagram.png" alt="SVM Maximum Margin Separation" class="project-image">
+                            <img src="assets/images/research_results_1.png" alt="Experimental Results Comparison" class="project-image">
+                        </div>
+                        
+                        <div class="project-story__text">
+                            <h4>Research Problem & Significance</h4>
+                            <p>Linear classification models are fundamental building blocks of machine learning, laying the foundation for deep neural networks. This study deeply analyzes the robustness and vulnerability of perceptron algorithms and support vector machines under various data conditions, providing theoretical guidance for model selection in practical applications.</p>
+                            
+                            <h4>Theoretical Contributions</h4>
+                            <p>We provided detailed proofs of Novikoff's convergence theorem, demonstrating the convergence guarantee of perceptrons on linearly separable data, while analyzing the cycling theorem to explain the failure mechanism of perceptrons on non-linearly separable data. For SVMs, we analyzed their dual formulation and kernel trick, demonstrating their superiority under the maximum margin principle.</p>
+                            
+                            <h4>Experimental Design</h4>
+                            <p>Designed a comprehensive experimental suite including sparsity tests, noise ratio tests, data range tests, biased data tests, and margin tests. Used 10-fold cross-validation on synthetic datasets with 500 samples across 5 different difficulty levels, ensuring statistical significance of results.</p>
+                            
+                            <h4>Key Findings</h4>
+                            <p>Research found that while SVMs consistently achieve the highest accuracy under various conditions, certain perceptron variants (particularly voted perceptrons combined with anti-noise mechanisms) remain competitive in high-noise environments, providing effective alternatives for resource-constrained application scenarios.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-story__metrics">
+                        <h4>Research Outcomes</h4>
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <span class="metric-value">A</span>
+                                <span class="metric-label">Research Grade</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">15+</span>
+                                <span class="metric-label">Algorithm Variants</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">5</span>
+                                <span class="metric-label">Difficulty Levels</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">10</span>
+                                <span class="metric-label">Fold Cross-Validation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Kaggle Competition -->
+                <div class="project-story">
+                    <div class="project-story__header">
+                        <span class="project-story__tag">Computer Vision</span>
+                        <h3>Kaggle 3D Object Detection Challenge</h3>
+                        <p class="project-story__subtitle">Achieved Top 22 placement among 390+ participants, focusing on flagellar motor localization in 3D bacterial reconstructions</p>
+                    </div>
+                    
+                    <div class="project-story__content">
+                        <div class="project-story__images">
+                            <div class="placeholder-image">
+                                <span>Bacterial 3D Reconstruction Visualization</span>
+                                <p>Showing flagellar motor position distribution in bacterial structures</p>
+                            </div>
+                            <div class="placeholder-image">
+                                <span>Model Performance Comparison Chart</span>
+                                <p>Accuracy comparison of different deep learning models on detection tasks</p>
+                            </div>
+                        </div>
+                        
+                        <div class="project-story__text">
+                            <h4>Challenge Background</h4>
+                            <p>The Kaggle 3D Object Detection Challenge focused on biological imaging applications, specifically locating flagellar motors in 3D reconstructions of bacteria. This presented unique challenges in computer vision due to the complex 3D nature of biological structures and the need for precise localization in noisy microscopy data.</p>
+                            
+                            <h4>Technical Approach</h4>
+                            <p>Applied deep learning models and computer vision techniques to process 3D biological imaging data. The main challenge was precisely locating biological structures from noisy microscopy data, requiring development of specialized data preprocessing pipelines and neural network architectures suitable for 3D object detection.</p>
+                            
+                            <h4>Innovation Points</h4>
+                            <p>Developed novel data augmentation techniques specifically designed for 3D biological data, implemented custom loss functions that account for the volumetric nature of the data, and created ensemble methods combining multiple detection approaches to improve robustness against imaging artifacts.</p>
+                            
+                            <h4>Competition Performance</h4>
+                            <p>Achieved 22nd place among 390+ participants, demonstrating technical strength in the intersection of computer vision and bioinformatics. This achievement reflects deep understanding of complex 3D image processing and object detection tasks in challenging biological contexts.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-story__achievement">
+                        <div class="achievement-badge">
+                            <span class="achievement-rank">Top 22</span>
+                            <span class="achievement-total">/ 390+</span>
+                            <span class="achievement-label">Participants</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Industry Collaboration -->
+                <div class="project-story">
+                    <div class="project-story__header">
+                        <span class="project-story__tag">Industry Collaboration</span>
+                        <h3>Enterprise Technology Collaboration Projects</h3>
+                        <p class="project-story__subtitle">Collaborated with Abbott Shanghai and Huawei to apply AI technology in real industrial scenarios</p>
+                    </div>
+                    
+                    <div class="project-story__content">
+                        <div class="project-story__images">
+                            <div class="placeholder-image">
+                                <span>Smart Distribution System Architecture</span>
+                                <p>Technical architecture of product tracking and distribution system</p>
+                            </div>
+                            <div class="placeholder-image">
+                                <span>Style Transfer Application Interface</span>
+                                <p>Home design AI application interface from Huawei project</p>
+                            </div>
+                        </div>
+                        
+                        <div class="project-story__text">
+                            <h4>Abbott Shanghai Technical Support Project</h4>
+                            <p>As a freelance technical support staff member, developed an intelligent distribution system for Abbott Shanghai. The system manages 5 product lines using CRUD database systems and Boolean logic, significantly improving product tracking efficiency. The project involved database design, logic optimization, and user interface development, providing technical support for medical device company supply chain management.</p>
+                            
+                            <h4>Huawei Youth Developer Program</h4>
+                            <p>Participated in the Huawei Youth Developer Program, focusing on practical applications of style transfer technology. Trained AI models on 150 artworks, identifying 200+ artistic style features, and applied style transfer models to home design software to help users visualize different styles of furniture and interior decoration effects.</p>
+                            
+                            <h4>Technical Implementation & Challenges</h4>
+                            <p>In the Abbott project, the main challenge was designing efficient database query systems and real-time update mechanisms. In the Huawei project, the focus was on optimizing style transfer model performance to ensure smooth operation on mobile devices while maintaining high-quality style transfer effects.</p>
+                            
+                            <h4>Business Value & Impact</h4>
+                            <p>These projects demonstrate the application potential of AI technology in real business scenarios. The Abbott project improved medical supply chain efficiency, while the Huawei project provided consumers with better shopping experiences, reflecting effective integration of technological innovation and business needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-story__companies">
+                        <div class="company-collaboration">
+                            <h4>Collaborating Companies</h4>
+                            <div class="company-list">
+                                <div class="company-item">
+                                    <strong>Abbott Shanghai</strong>
+                                    <span>Medical Technology | Product Distribution System</span>
+                                </div>
+                                <div class="company-item">
+                                    <strong>Huawei</strong>
+                                    <span>AI Technology | Style Transfer Applications</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -87,6 +278,23 @@
                 </div>
 
                 <div class="grid grid--3">
+                    <div class="card">
+                        <span class="card__tag">Machine Learning Research</span>
+                        <h3>Algorithm Robustness Study</h3>
+                        <p>Theoretical and empirical analysis comparing Perceptron variants with Support Vector Machines across multiple data conditions including noise, sparsity, and class imbalance.</p>
+                        <ul>
+                            <li>Comprehensive performance evaluation across 5 difficulty levels</li>
+                            <li>Implementation of margin-based, λ-trick, and voted Perceptron variants</li>
+                            <li>Statistical analysis using 10-fold cross-validation</li>
+                            <li>Mathematical proof of convergence guarantees</li>
+                        </ul>
+                        <div class="card__tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">NumPy</span>
+                        </div>
+                    </div>
+
                     <div class="card">
                         <span class="card__tag">Computer Vision</span>
                         <h3>Bio-Informatics Analysis</h3>
@@ -118,23 +326,6 @@
                             <span class="tech-tag">Scikit-learn</span>
                             <span class="tech-tag">Pandas</span>
                             <span class="tech-tag">PostgreSQL</span>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <span class="card__tag">Web Technology</span>
-                        <h3>Full-Stack Applications</h3>
-                        <p>Modern web applications with focus on performance, accessibility, and user experience.</p>
-                        <ul>
-                            <li>React/Vue.js frontend development</li>
-                            <li>Node.js/Express backend APIs</li>
-                            <li>Database design and optimization</li>
-                            <li>Cloud deployment and scaling</li>
-                        </ul>
-                        <div class="card__tech">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
                         </div>
                     </div>
                 </div>
@@ -198,52 +389,241 @@
         <section id="performance-page" class="page-section">
             <div class="hero hero--performance">
                 <div class="container">
-                    <h1>Musical Performance</h1>
-                    <p class="hero__subtitle">Jazz improvisation, classical foundation, and orchestral excellence.</p>
+                    <h1>Musical Performance & Artistry</h1>
+                    <p class="hero__subtitle">From classical foundations to jazz improvisation, musical journey spanning diverse performance styles and artistic exploration</p>
                 </div>
             </div>
 
             <div class="container">
-                <!-- Performance Experience -->
+                <!-- Performance Overview Grid -->
                 <div class="section-header">
-                    <h2>Performance Experience</h2>
-                    <p>Professional performance and academic excellence</p>
+                    <h2>Performance Overview</h2>
+                    <p>Diverse musical performance experience spanning jazz, classical, and contemporary styles</p>
                 </div>
 
-                <div class="grid grid--2">
-                    <div class="card featured">
-                        <span class="card__tag">Piano</span>
-                        <h3>Jazz Improvisation</h3>
-                        <p>Advanced jazz piano performance with focus on improvisation and harmonic exploration. Extensive experience in blues, bebop, and contemporary jazz styles.</p>
-                        <ul>
-                            <li>Advanced chord voicing and substitution techniques</li>
-                            <li>Solo performance and ensemble collaboration</li>
-                            <li>Composition and arrangement experience</li>
-                            <li>Jazz standards and original compositions</li>
-                            <li>Real-time improvisation and musical dialogue</li>
-                        </ul>
-                        <div class="card__achievements">
-                            <span class="achievement">5+ Years Experience</span>
-                            <span class="achievement">Solo Performances</span>
-                            <span class="achievement">Ensemble Leader</span>
+                <div class="grid grid--4">
+                    <div class="activity-card">
+                        <div class="activity-icon piano-icon"></div>
+                        <h4>Jazz Piano Performance</h4>
+                        <p>House of Blues & Jazz Resident Performer</p>
+                        <span class="activity-period">2021.09 - 2025.08</span>
+                    </div>
+                    <div class="activity-card">
+                        <div class="activity-icon clarinet-icon"></div>
+                        <h4>Classical Clarinet</h4>
+                        <p>Shanghai Starriver Ensemble & Charity Concerts</p>
+                        <span class="activity-period">2021.09 - 2025.06</span>
+                    </div>
+                    <div class="activity-card">
+                        <div class="activity-icon education-icon"></div>
+                        <h4>Carnegie Mellon Summer Program</h4>
+                        <p>Contemporary Music & Extended Techniques</p>
+                        <span class="activity-period">2024.06 - 2024.08</span>
+                    </div>
+                    <div class="activity-card">
+                        <div class="activity-icon award-icon"></div>
+                        <h4>Competition Awards</h4>
+                        <p>Liszt International Youth Piano Competition Silver Medal</p>
+                        <span class="activity-period">2024.04</span>
+                    </div>
+                </div>
+
+                <!-- Detailed Performance Stories -->
+                <div class="section-header">
+                    <h2>Detailed Performance Stories</h2>
+                    <p>Musical exploration and artistic growth behind each performance</p>
+                </div>
+
+                <!-- Story 1: Jazz Performance -->
+                <div class="project-story">
+                    <div class="project-story__header">
+                        <span class="project-story__tag">Jazz Piano Performance</span>
+                        <h3>House of Blues and Jazz, Shanghai - Resident Jazz Pianist</h3>
+                        <p class="project-story__subtitle">4-year residency at Shanghai's premier jazz venue, performing with a 6-member jazz ensemble, delivering 1.5-hour weekly performances for 60+ audience members</p>
+                    </div>
+                    
+                    <div class="project-story__content">
+                        <div class="project-story__images">
+                            <div class="placeholder-image">
+                                <span>Jazz Performance Live Photo</span>
+                                <p>House of Blues and Jazz performance scene, showcasing collaboration with band members</p>
+                            </div>
+                            <div class="placeholder-image">
+                                <span>Chinese Songs Jazz Arrangement Sheet Music</span>
+                                <p>Showcasing jazz-style arrangements of 5 Chinese songs</p>
+                            </div>
+                        </div>
+                        
+                        <div class="project-story__text">
+                            <h4>Performance Environment and Challenges</h4>
+                            <p>House of Blues and Jazz is a renowned jazz venue in Shanghai with professional sound equipment and discerning jazz music enthusiasts in the audience. As the band's pianist, I needed to maintain high-level improvisation throughout 1.5-hour performances while maintaining close musical dialogue with the other 6 musicians.</p>
+                            
+                            <h4>Musical Style Exploration</h4>
+                            <p>Deeply studied the works of jazz piano masters like Fred Hersch and Bill Evans, learning their unique harmonic language and improvisational techniques. Particularly focused on mastering classic repertoire such as "All The Things You Are" and "Days of Wine and Roses", understanding multiple interpretative approaches to these standard tunes.</p>
+                            
+                            <h4>Original Arrangement Works</h4>
+                            <p>Creatively arranged 5 Chinese songs into jazz style, a challenging cross-cultural music project. Required maintaining the original melody characteristics while incorporating jazz harmony, rhythm, and improvisational elements, allowing Chinese audiences to experience the charm of jazz music through familiar melodies.</p>
+                            
+                            <h4>Performance Skills Development</h4>
+                            <p>Through 4 years of regular performances, significantly improved live performance ability, improvisational composition skills, and collaborative ability with other musicians. Learned to adjust playing style according to live atmosphere, mastered characteristics of different jazz subgenres, and can flexibly use various chord configurations and rhythm patterns.</p>
                         </div>
                     </div>
+                    
+                    <div class="project-story__metrics">
+                        <h4>Performance Statistics</h4>
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <span class="metric-value">60+</span>
+                                <span class="metric-label">Weekly Audience</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">4+</span>
+                                <span class="metric-label">Years of Experience</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">5</span>
+                                <span class="metric-label">Original Arrangements</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">1.5</span>
+                                <span class="metric-label">Hours per Performance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                    <div class="card featured">
-                        <span class="card__tag">Clarinet</span>
-                        <h3>Orchestral Performance</h3>
-                        <p>Principal clarinet experience in symphony orchestras and chamber ensembles, with comprehensive classical repertoire mastery.</p>
-                        <ul>
-                            <li>Orchestral and chamber music performance</li>
-                            <li>Solo recital and competition experience</li>
-                            <li>Music theory and score analysis expertise</li>
-                            <li>Sight-reading and ensemble skills</li>
-                            <li>Classical and contemporary repertoire</li>
-                        </ul>
-                        <div class="card__achievements">
-                            <span class="achievement">Principal Chair</span>
-                            <span class="achievement">Competition Winner</span>
-                            <span class="achievement">Chamber Musician</span>
+                <!-- Story 2: Classical Performance -->
+                <div class="project-story">
+                    <div class="project-story__header">
+                        <span class="project-story__tag">Classical Clarinet</span>
+                        <h3>Shanghai Starriver Classical Ensemble - Clarinet Player</h3>
+                        <p class="project-story__subtitle">Clarinet player in 50-member classical ensemble, performing 4 major concerts annually for 200+ student audiences, and participating in Yale Club charity concerts (500+ audience)</p>
+                    </div>
+                    
+                    <div class="project-story__content">
+                        <div class="project-story__images">
+                            <div class="placeholder-image">
+                                <span>Ensemble Performance Photos</span>
+                                <p>Shanghai Starriver Classical Ensemble New Year Concert Scene</p>
+                            </div>
+                            <div class="placeholder-image">
+                                <span>Charity Concert Poster</span>
+                                <p>Yale Club of Shanghai charity concert promotional materials</p>
+                            </div>
+                        </div>
+                        
+                        <div class="project-story__text">
+                            <h4>Ensemble Role and Responsibilities</h4>
+                            <p>As a clarinet section member in a large classical ensemble of approximately 50 musicians, I carry important woodwind section responsibilities. In symphonic works, the clarinet must complete technically demanding solo passages while maintaining harmonious unity with the entire woodwind section, requiring exceptional intonation control and tone blending abilities.</p>
+                            
+                            <h4>Performance Repertoire and Challenges</h4>
+                            <p>Performance repertoire spans from Baroque to contemporary periods, including Tchaikovsky ballets, Beethoven symphonies, Saint-Saëns' "Danse Bacchanale", and Arturo Márquez's "Danzón No. 2". Each work presents different technical and musical demands for the clarinet, requiring mastery of diverse performance styles.</p>
+                            
+                            <h4>Charity Concert Significance</h4>
+                            <p>Participating in charity concerts organized by the Yale Club of Shanghai, performing for 500+ audiences, represents not only a showcase of musical skills but also the embodiment of music's social value. Contributing to charitable causes through music gave me profound understanding of music's social responsibility and cultural transmission value.</p>
+                            
+                            <h4>Skills Development and Growth</h4>
+                            <p>Four years of ensemble experience significantly improved sight-reading ability, chamber music skills, and stage presence. I learned to quickly adapt to different conductors' styles, mastered complex rhythm and intonation changes, and developed the ability to maintain focus and collaboration in large ensemble settings.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-story__achievement">
+                        <div class="achievement-badge">
+                            <span class="achievement-rank">500+</span>
+                            <span class="achievement-total">Audience</span>
+                            <span class="achievement-label">Charity Concert</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story 3: Carnegie Mellon Summer Program -->
+                <div class="project-story">
+                    <div class="project-story__header">
+                        <span class="project-story__tag">Contemporary Music</span>
+                        <h3>Carnegie Mellon University Music Summer Program</h3>
+                        <p class="project-story__subtitle">Participated in prestigious music conservatory summer camp, performed contemporary clarinet solo piece "Rain", exploring extended techniques and modern musical language</p>
+                    </div>
+                    
+                    <div class="project-story__content">
+                        <div class="project-story__images">
+                            <div class="placeholder-image">
+                                <span>Carnegie Mellon Campus</span>
+                                <p>Music school practice rooms and performance hall environment</p>
+                            </div>
+                            <div class="placeholder-image">
+                                <span>"Rain" Musical Score</span>
+                                <p>Showcasing extended technique notation and performance techniques</p>
+                            </div>
+                        </div>
+                        
+                        <div class="project-story__text">
+                            <h4>Summer Program Experience Overview</h4>
+                            <p>Carnegie Mellon University is one of America's top music conservatories, and its summer program brings together outstanding young musicians from around the world. In this high-level academic environment, I had the opportunity to encounter cutting-edge contemporary music concepts and performance techniques, expanding my musical horizons.</p>
+                            
+                            <h4>Contemporary Work "Rain" Challenges</h4>
+                            <p>The performed contemporary clarinet solo "Rain" was an experimental work created by a fellow participant, employing sparse rubato feel and extended techniques such as flutter-tonguing. This piece challenged traditional performance methods, requiring performers to create unique melancholic atmospheres through precise tonal control and phrasing.</p>
+                            
+                            <h4>Mastering Extended Techniques</h4>
+                            <p>Flutter-tonguing is a commonly used extended technique in modern clarinet works that produces unique tonal effects. Through specialized practice and guidance, I mastered the control method for this technique, learning how to organically combine technique with musical expression, not merely for show.</p>
+                            
+                            <h4>Expansion of Artistic Concepts</h4>
+                            <p>This experience gave me profound understanding of contemporary music aesthetics, learning to transcend traditional interpretive frameworks and focus on shaping raw emotional texture through precise control of timbre and phrasing. This avant-garde musical approach has now been integrated into my future performance and composition work.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-story__companies">
+                        <div class="company-collaboration">
+                            <h4>Academic Institution</h4>
+                            <div class="company-list">
+                                <div class="company-item">
+                                    <strong>Carnegie Mellon University</strong>
+                                    <span>Music School | Summer Program</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story 4: Competition & Awards -->
+                <div class="project-story">
+                    <div class="project-story__header">
+                        <span class="project-story__tag">Piano Competition</span>
+                        <h3>Piano Competition and Award Experience</h3>
+                        <p class="project-story__subtitle">Liszt International Youth Piano Competition Silver Medal and other competition experiences, showcasing classical piano performance technical strength</p>
+                    </div>
+                    
+                    <div class="project-story__content">
+                        <div class="project-story__images">
+                            <div class="placeholder-image">
+                                <span>Competition Performance Photo</span>
+                                <p>4th Liszt International Youth Piano Competition live performance</p>
+                            </div>
+                            <div class="placeholder-image">
+                                <span>Award Certificate</span>
+                                <p>Silver medal certificate and competition memorabilia</p>
+                            </div>
+                        </div>
+                        
+                        <div class="project-story__text">
+                            <h4>Competition Repertoire and Challenges</h4>
+                            <p>In the 4th Liszt International Youth Piano Competition, I performed Liszt's "Liebestraume", a romantic classic that demands both technical prowess and musical sensitivity. The competition required performers to not only possess solid technical foundation but also convey the deep emotional content and poetic expression of the work.</p>
+                            
+                            <h4>Classical Piano Foundation Training</h4>
+                            <p>Classical piano training that began in elementary school laid a solid foundation for competition participation. I specialized in studying works by masters such as Chopin, Mozart, and Bach, particularly the complex chord progressions and other musical motifs in Chopin nocturnes, including the use of rubato and harmonic tension.</p>
+                            
+                            <h4>Exploring Lesser-Known Classical Works</h4>
+                            <p>Beyond well-known pieces, I also deeply explored works by lesser-known classical composers, such as Sibelius' "Etude in A minor, Op. 76, No. 2". Through performing this piece, I learned to appreciate Sibelius' technique of using repetitive, rhythmic motifs and sudden dynamic changes to evoke tension and resilience.</p>
+                            
+                            <h4>Value of Competition Experience</h4>
+                            <p>Competition experience not only improved performance skills but more importantly cultivated the psychological quality to maintain stable performance under pressure. I learned how to prepare for competitions, manage nervous emotions, and how to best showcase the artistic value of works within limited time.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-story__achievement">
+                        <div class="achievement-badge">
+                            <span class="achievement-rank">Silver Medal</span>
+                            <span class="achievement-total">Top 5%</span>
+                            <span class="achievement-label">Liszt International Youth Piano Competition</span>
                         </div>
                     </div>
                 </div>
@@ -337,95 +717,95 @@
 
                 <div class="grid grid--2">
                     <div class="card featured">
-                        <span class="card__tag">Accessibility</span>
-                        <h3>Hearing Accessibility Solutions</h3>
-                        <p>Developing assistive technology to improve musical accessibility for the hearing impaired community.</p>
+                        <span class="card__tag">AI Audio Synthesis</span>
+                        <h3>RAVE Model Research</h3>
+                        <p>Trained a Realtime Audio Variational autoEncoder model for high-quality rain sound synthesis, achieving real-time factor of 0.23 and spectral reconstruction loss of 0.142.</p>
                         <ul>
-                            <li>Visual music representation systems</li>
-                            <li>Haptic feedback for musical experience</li>
-                            <li>Real-time audio to visual translation</li>
-                            <li>Sign language integration for performances</li>
-                            <li>Community testing and feedback integration</li>
+                            <li>Successfully created smooth transitions between different rain intensities</li>
+                            <li>Latent space manipulation for texture control</li>
+                            <li>Real-time audio generation optimization</li>
+                            <li>Applied in electronic music production</li>
+                            <li>Custom dataset creation and model training</li>
                         </ul>
                         <div class="card__impact">
-                            <span class="impact-stat">500+ Users Reached</span>
-                            <span class="impact-stat">3 Community Partnerships</span>
+                            <span class="impact-stat">Real-time Factor: 0.23</span>
+                            <span class="impact-stat">Loss: 0.142</span>
                         </div>
                     </div>
 
                     <div class="card featured">
-                        <span class="card__tag">Healthcare</span>
-                        <h3>Alzheimer's Music Therapy</h3>
-                        <p>Technology-assisted music therapy solutions for cognitive rehabilitation and memory enhancement.</p>
+                        <span class="card__tag">Music Technology</span>
+                        <h3>Tencent Music Tech X Program</h3>
+                        <p>Music technology trainee program focusing on accessibility solutions. Tested pitch-corrected songs for hearing loss and composed music for Alzheimer's awareness.</p>
                         <ul>
-                            <li>Personalized music recommendation systems</li>
-                            <li>Progress tracking and analysis tools</li>
-                            <li>Family and caregiver interfaces</li>
-                            <li>Memory trigger identification algorithms</li>
-                            <li>Clinical data integration and reporting</li>
+                            <li>Enhanced sound perception for hearing loss patients</li>
+                            <li>Composed music for 3-min Alzheimer's awareness video (500+ likes)</li>
+                            <li>Applied algorithms for spectrum rearrangement</li>
+                            <li>Collaborated with healthcare professionals</li>
+                            <li>Research on assistive music technology</li>
                         </ul>
                         <div class="card__impact">
-                            <span class="impact-stat">Clinical Trial Participation</span>
-                            <span class="impact-stat">Healthcare Partnerships</span>
+                            <span class="impact-stat">500+ Video Likes</span>
+                            <span class="impact-stat">Healthcare Focus</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Technical Innovation -->
+                <!-- Music Production Portfolio -->
                 <div class="section-header">
-                    <h2>Technical Innovation</h2>
-                    <p>Audio processing and AI-driven music technologies</p>
+                    <h2>Music Production Portfolio</h2>
+                    <p>Original compositions and production work</p>
                 </div>
 
                 <div class="grid grid--3">
                     <div class="card">
-                        <span class="card__tag">Audio Processing</span>
-                        <h3>Real-time Audio Effects</h3>
-                        <p>Web Audio API implementations for live performance and studio applications.</p>
+                        <span class="card__tag">Electronic/Indie Pop</span>
+                        <h3>"Walk in the Rain"</h3>
+                        <p>Electronic composition featuring AI-generated rain textures using RAVE model. Blends synthetic production with organic nature sounds.</p>
                         <ul>
-                            <li>Custom digital signal processing</li>
-                            <li>Low-latency audio processing</li>
-                            <li>Plugin architecture development</li>
-                            <li>Cross-platform compatibility</li>
+                            <li>RAVE-generated rainfall textures</li>
+                            <li>Logic Pro production</li>
+                            <li>Serum, Keyscape, Omnisphere</li>
+                            <li>Gradual emotional layering</li>
                         </ul>
                         <div class="card__tech">
-                            <span class="tech-tag">Web Audio API</span>
-                            <span class="tech-tag">C++</span>
-                            <span class="tech-tag">JUCE</span>
+                            <span class="tech-tag">Logic Pro</span>
+                            <span class="tech-tag">RAVE Model</span>
+                            <span class="tech-tag">AI Audio</span>
                         </div>
                     </div>
 
                     <div class="card">
-                        <span class="card__tag">AI Composition</span>
-                        <h3>Generative Music Systems</h3>
-                        <p>AI-assisted composition tools and algorithmic music generation platforms.</p>
+                        <span class="card__tag">Epic/Orchestra</span>
+                        <h3>"The Monolithic Eschaton"</h3>
+                        <p>Orchestral epic composition exploring the duality of overwhelming power and tragic beauty through cyclical motifs.</p>
                         <ul>
-                            <li>Neural network music generation</li>
-                            <li>Style transfer for musical compositions</li>
-                            <li>Interactive composition interfaces</li>
-                            <li>Music theory-informed AI models</li>
+                            <li>Kontakt symphonic libraries</li>
+                            <li>Dynamic contrasts and repetition</li>
+                            <li>Electronic bass integration</li>
+                            <li>Push-and-pull narrative structure</li>
                         </ul>
                         <div class="card__tech">
-                            <span class="tech-tag">TensorFlow</span>
-                            <span class="tech-tag">MIDI</span>
-                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Kontakt</span>
+                            <span class="tech-tag">Orchestration</span>
+                            <span class="tech-tag">Epic Music</span>
                         </div>
                     </div>
 
                     <div class="card">
-                        <span class="card__tag">Education</span>
-                        <h3>Interactive Learning</h3>
-                        <p>Gamified music education platforms with adaptive learning algorithms.</p>
+                        <span class="card__tag">Electronic/Artcore</span>
+                        <h3>"Antelucan"</h3>
+                        <p>High-speed artcore composition blending complex melodies with atmospheric electronic backgrounds, featuring layered piano and violin.</p>
                         <ul>
-                            <li>Personalized learning pathways</li>
-                            <li>Real-time performance feedback</li>
-                            <li>Progress tracking and analytics</li>
-                            <li>Multiplayer music collaboration</li>
+                            <li>Pianoteq8 & Keyscape layering</li>
+                            <li>SWAM virtual violin</li>
+                            <li>Slight dissonance techniques</li>
+                            <li>High-speed technical proficiency</li>
                         </ul>
                         <div class="card__tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">WebRTC</span>
-                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Pianoteq8</span>
+                            <span class="tech-tag">SWAM</span>
+                            <span class="tech-tag">Artcore</span>
                         </div>
                     </div>
                 </div>
