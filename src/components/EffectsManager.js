@@ -144,22 +144,22 @@ export class EffectsManager {
 
   // 阅读进度指示器
   setupProgressIndicator() {
-    // 创建进度条元素
-    const progressBar = document.createElement('div')
-    progressBar.className = 'reading-progress'
-    progressBar.innerHTML = '<div class="reading-progress__bar"></div>'
-    document.body.prepend(progressBar)
+    // 创建进度圆形指示器元素
+    const progressIndicator = document.createElement('div')
+    progressIndicator.className = 'reading-progress'
+    progressIndicator.textContent = '0%'
+    document.body.appendChild(progressIndicator)
   }
 
   updateReadingProgress() {
-    const progressBar = document.querySelector('.reading-progress__bar')
-    if (!progressBar) return
+    const progressIndicator = document.querySelector('.reading-progress')
+    if (!progressIndicator) return
 
     const winScroll = document.body.scrollTop || document.documentElement.scrollTop
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight
     const scrolled = (winScroll / height) * 100
     
-    progressBar.style.width = Math.min(scrolled, 100) + '%'
+    progressIndicator.textContent = Math.round(Math.min(scrolled, 100)) + '%'
   }
 
   // 导航栏滚动动画
@@ -170,15 +170,8 @@ export class EffectsManager {
   handleNavigationScroll(scrollY) {
     if (!this.navigation) return
 
-    const scrollThreshold = 100
-    
-    if (scrollY > scrollThreshold && scrollY > this.lastScrollY) {
-      // 向下滚动，隐藏导航栏
-      this.navigation.classList.add('nav--hidden')
-    } else if (scrollY <= scrollThreshold || scrollY < this.lastScrollY) {
-      // 向上滚动或在顶部，显示导航栏
-      this.navigation.classList.remove('nav--hidden')
-    }
+    // 导航栏始终显示，不进行隐藏操作
+    this.navigation.classList.remove('nav--hidden')
   }
 
   // 动画入场设置
