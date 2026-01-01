@@ -9,6 +9,37 @@
   display: block;
 }
 
+/* Page Content Area - White background for main content */
+.page-section .container:not(.hero .container) {
+  background: white;
+  padding: var(--space-8);
+  margin-top: 0;
+  border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 2;
+}
+
+/* Override text colors in content areas */
+.page-section .container:not(.hero .container) * {
+  color: var(--text-primary) !important;
+}
+
+.page-section .container:not(.hero .container) h1,
+.page-section .container:not(.hero .container) h2,
+.page-section .container:not(.hero .container) h3,
+.page-section .container:not(.hero .container) h4,
+.page-section .container:not(.hero .container) h5,
+.page-section .container:not(.hero .container) h6 {
+  color: #1a202c !important;
+}
+
+.page-section .container:not(.hero .container) p,
+.page-section .container:not(.hero .container) li,
+.page-section .container:not(.hero .container) span:not(.tech-tag):not(.card__tag):not(.activity-card__tag):not(.project-story__tag) {
+  color: #4a5568 !important;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -319,8 +350,8 @@
 }
 
 .activity-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   text-align: center;
@@ -365,11 +396,12 @@
 
 /* Project Story Layout */
 .project-story {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-xl);
   padding: var(--space-8);
   margin-bottom: var(--space-12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .project-story__header {
