@@ -36,7 +36,7 @@
   padding: var(--space-3) var(--space-6);
   font-size: var(--font-size-base);
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--primary-800);
   cursor: pointer;
   border-radius: var(--border-radius-lg);
   transition: all var(--transition-fast);
@@ -44,13 +44,12 @@
 }
 
 .nav__button:hover {
-  color: var(--accent-700);
+  color: var(--accent-800);
   background-color: var(--bg-secondary);
 }
 
 .nav__button.active {
-  color: var(--accent-800);
-  background-color: var(--accent-700);
+  background-color: var(--accent-800);
   color: white;
 }
 
