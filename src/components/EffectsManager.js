@@ -38,6 +38,7 @@ export class EffectsManager {
     this.setupProgressIndicator()
     this.setupAnimatedEntries()
     this.setupNavigationAnimation()
+    this.setupCardClickHandlers()
     console.log('✨ Dynamic effects initialized')
   }
 
@@ -218,6 +219,38 @@ export class EffectsManager {
     sections.forEach(section => {
       section.style.transition = 'opacity 0.4s ease, transform 0.4s ease'
     })
+  }
+
+  // 设置卡片点击跳转处理
+  setupCardClickHandlers() {
+    const clickableCards = document.querySelectorAll('.card[data-target], .activity-card[data-target]')
+    
+    clickableCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        e.preventDefault()
+        const targetId = card.getAttribute('data-target')
+        const targetElement = document.getElementById(targetId)
+        
+        if (targetElement) {
+          // 平滑滚动到目标元素
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          })
+          
+          // 添加高亮效果
+          targetElement.style.transition = 'box-shadow 0.3s ease'
+          targetElement.style.boxShadow = '0 0 20px rgba(59, 130, 246, 0.3)'
+          
+          // 移除高亮效果
+          setTimeout(() => {
+            targetElement.style.boxShadow = ''
+          }, 2000)
+        }
+      })
+    })
+    
+    console.log(`✨ Card click handlers setup for ${clickableCards.length} cards`)
   }
 
   // 清理资源

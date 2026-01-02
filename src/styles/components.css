@@ -80,6 +80,12 @@
   transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .card::before {
@@ -331,7 +337,7 @@
 /* Section Headers */
 .section-header {
   text-align: center;
-  margin: var(--space-16) 0 var(--space-8);
+  margin: var(--space-8) 0 var(--space-6);
 }
 
 .section-header h2 {
