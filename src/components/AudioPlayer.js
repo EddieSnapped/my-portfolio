@@ -1,6 +1,6 @@
 /**
  * Audio Player Component
- * 处理音乐播放、控制和UI更新
+ * Handles music playback, controls, and UI updates
  */
 export class AudioPlayer {
   constructor() {
@@ -11,9 +11,9 @@ export class AudioPlayer {
   }
 
   init() {
-    // 检查浏览器音频支持
+    // Check browser audio support
     if (!window.Audio) {
-      console.error('此浏览器不支持Web Audio API')
+      console.error('This browser does not support Web Audio API')
       this.showUnsupportedMessage()
       return
     }
@@ -27,8 +27,8 @@ export class AudioPlayer {
     const messageHTML = `
       <div class="audio-player unsupported" id="audio-player">
         <div class="player-info">
-          <div class="track-title">音频播放不支持</div>
-          <div class="track-artist">请使用现代浏览器</div>
+          <div class="track-title">Audio playback not supported</div>
+          <div class="track-artist">Please use a modern browser</div>
         </div>
       </div>
     `
@@ -36,7 +36,7 @@ export class AudioPlayer {
   }
 
   createPlayerControls() {
-    // 创建音乐播放器控制界面
+    // Create music player control interface
     const playerHTML = `
       <div class="audio-player" id="audio-player">
         <div class="player-info">
@@ -60,7 +60,7 @@ export class AudioPlayer {
       </div>
     `
     
-    // 添加到页面底部
+    // Add to page bottom
     document.body.insertAdjacentHTML('beforeend', playerHTML)
   }
 
@@ -72,7 +72,7 @@ export class AudioPlayer {
     playPauseBtn?.addEventListener('click', () => this.togglePlayPause())
     stopBtn?.addEventListener('click', () => this.stop())
 
-    // 进度条点击跳转
+    // Progress bar click to seek
     progressBar?.addEventListener('click', (e) => {
       if (this.currentAudio && this.currentAudio.duration) {
         const rect = progressBar.getBoundingClientRect()
@@ -83,7 +83,7 @@ export class AudioPlayer {
       }
     })
 
-    // 为所有播放按钮添加事件监听器
+    // Add event listeners for all play buttons
     document.addEventListener('click', (e) => {
       if (e.target.classList.contains('play-music-btn')) {
         const trackPath = e.target.dataset.track
@@ -94,25 +94,25 @@ export class AudioPlayer {
   }
 
   playTrack(trackPath, trackTitle) {
-    // 停止当前播放的音乐
+    // Stop current playing music
     if (this.currentAudio) {
       this.currentAudio.pause()
       this.currentAudio.currentTime = 0
       this.currentAudio = null
     }
 
-    // 创建新的音频对象
+    // Create new audio object
     this.currentAudio = new Audio(trackPath)
     this.currentTrack = trackTitle
 
-    // 更新UI
+    // Update UI with track title immediately
     this.updatePlayerInfo(trackTitle)
-    console.log(`加载音频: ${trackPath}`)
+    console.log(`Loading audio: ${trackPath}`)
     
-    // 设置音频事件监听器
+    // Set audio event listeners
     this.currentAudio.addEventListener('loadedmetadata', () => {
       this.updateTotalTime()
-      console.log('音频文件加载成功')
+      console.log('Audio file loaded successfully')
     })
 
     this.currentAudio.addEventListener('timeupdate', () => {
@@ -124,24 +124,21 @@ export class AudioPlayer {
     })
 
     this.currentAudio.addEventListener('error', (e) => {
-      console.error('音频文件加载失败:', e)
-      console.error('尝试的路径:', trackPath)
-      this.updatePlayerInfo('音频文件不可用')
+      console.error('Audio file loading failed:', e)
+      console.error('Attempted path:', trackPath)
+      this.updatePlayerInfo('Audio file unavailable')
     })
 
-    // 添加加载状态反馈
-    this.updatePlayerInfo('正在加载...')
-
-    // 开始播放
+    // Start playback
     this.currentAudio.play().then(() => {
       this.isPlaying = true
       this.updatePlayPauseButton()
       this.showPlayer()
-      console.log('音频播放开始')
+      console.log('Audio playback started')
     }).catch((error) => {
-      console.error('播放失败:', error)
-      // 可能是自动播放策略限制，显示友好提示
-      this.updatePlayerInfo('点击播放音频')
+      console.error('Playback failed:', error)
+      // Might be autoplay policy restriction, show friendly message
+      this.updatePlayerInfo('Click to play audio')
       this.showPlayer()
     })
   }
@@ -205,13 +202,13 @@ export class AudioPlayer {
     const currentTime = this.currentAudio.currentTime
     const duration = this.currentAudio.duration
 
-    // 更新当前时间
+    // Update current time
     const currentTimeElement = document.querySelector('.current-time')
     if (currentTimeElement) {
       currentTimeElement.textContent = this.formatTime(currentTime)
     }
 
-    // 更新进度条
+    // Update progress bar
     const progressFill = document.querySelector('.progress-fill')
     if (progressFill && duration) {
       const progress = (currentTime / duration) * 100
