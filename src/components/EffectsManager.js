@@ -176,26 +176,35 @@ export class EffectsManager {
 
   // 动画入场设置
   setupAnimatedEntries() {
-    // 为大卡片添加3D悬停效果（只作用于主要卡片容器）
-    const majorCards = document.querySelectorAll('.card, .activity-card, .project-story')
+    // 为主要卡片添加3D悬停效果（只作用于卡片容器，不影响内部文本）
+    const majorCards = document.querySelectorAll('.card, .activity-card, .music-track')
     majorCards.forEach(card => {
       card.addEventListener('mouseenter', (e) => {
-        e.target.style.transform = 'perspective(1000px) rotateX(5deg) rotateY(5deg) scale(1.02)'
+        // 确保只对卡片容器本身应用效果，停止事件冒泡
+        if (e.target === card) {
+          e.target.style.transform = 'perspective(1000px) rotateX(2deg) rotateY(2deg) scale(1.01)'
+        }
       })
       
       card.addEventListener('mouseleave', (e) => {
-        e.target.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)'
+        if (e.target === card) {
+          e.target.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)'
+        }
       })
       
       card.addEventListener('mousemove', (e) => {
-        const rect = e.target.getBoundingClientRect()
-        const centerX = rect.left + rect.width / 2
-        const centerY = rect.top + rect.height / 2
-        
-        const rotateX = (e.clientY - centerY) / 10
-        const rotateY = (centerX - e.clientX) / 10
-        
-        e.target.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`
+        // 只对卡片容器应用，减少倾斜角度
+        if (e.target === card) {
+          const rect = e.target.getBoundingClientRect()
+          const centerX = rect.left + rect.width / 2
+          const centerY = rect.top + rect.height / 2
+          
+          // 减少倾斜系数，从 /10 改为 /20，最大角度约为 ±3度
+          const rotateX = Math.max(-3, Math.min(3, (e.clientY - centerY) / 20))
+          const rotateY = Math.max(-3, Math.min(3, (centerX - e.clientX) / 20))
+          
+          e.target.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.01)`
+        }
       })
     })
   }

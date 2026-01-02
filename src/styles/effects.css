@@ -63,17 +63,17 @@ body {
 .animate-on-scroll:nth-child(3) { transition-delay: 0.3s; }
 .animate-on-scroll:nth-child(4) { transition-delay: 0.4s; }
 
-/* 3D卡片悬停效果 */
-.card, .activity-card, .project-story {
+/* 3D卡片悬停效果 - 只应用于主要卡片 */
+.card, .activity-card, .music-track {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform-style: preserve-3d;
   will-change: transform;
 }
 
-.card:hover, .activity-card:hover {
+.card:hover, .activity-card:hover, .music-track:hover {
   box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.1),
-    0 10px 20px rgba(0, 0, 0, 0.06);
+    0 12px 25px rgba(0, 0, 0, 0.08),
+    0 6px 12px rgba(0, 0, 0, 0.04);
 }
 
 /* 页面切换过渡 */
@@ -196,8 +196,8 @@ body {
     transform: translateY(20px) scale(0.98);
   }
   
-  .card:hover, .activity-card:hover {
-    transform: perspective(1000px) rotateX(2deg) rotateY(2deg) scale(1.01);
+  .card:hover, .activity-card:hover, .music-track:hover {
+    transform: perspective(1000px) rotateX(1deg) rotateY(1deg) scale(1.005);
   }
 }
 
@@ -206,7 +206,7 @@ body {
   .animate-on-scroll,
   .card,
   .activity-card,
-  .project-story,
+  .music-track,
   .page-section,
   .hero,
   .tech-tag,
