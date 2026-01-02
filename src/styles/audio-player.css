@@ -14,6 +14,8 @@
   transition: bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1001;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  /* 禁用倾斜效果 */
+  transform-style: flat !important;
 }
 
 .audio-player.visible {
@@ -84,11 +86,16 @@
 
 .progress-bar {
   flex: 1;
-  height: 4px;
+  height: 6px;
   background: #e2e8f0;
-  border-radius: 2px;
+  border-radius: 3px;
   overflow: hidden;
   cursor: pointer;
+  transition: height 0.2s ease;
+}
+
+.progress-bar:hover {
+  height: 8px;
 }
 
 .progress-fill {
@@ -127,7 +134,7 @@
   font-size: 12px;
 }
 
-/* Music Section Styling */
+/* Music Track Styling */
 .music-track {
   background: #f8fafc;
   border: 1px solid #e2e8f0;
@@ -135,11 +142,13 @@
   padding: 20px;
   margin-bottom: 16px;
   transition: all 0.3s ease;
+  /* 禁用倾斜效果 */
+  transform-style: flat !important;
 }
 
 .music-track:hover {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
+  transform: translateY(-2px) !important;
 }
 
 .music-track-header {

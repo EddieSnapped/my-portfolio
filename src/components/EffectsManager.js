@@ -176,36 +176,39 @@ export class EffectsManager {
 
   // 动画入场设置
   setupAnimatedEntries() {
-    // 为主要卡片添加3D悬停效果（只作用于卡片容器，不影响内部文本）
-    const majorCards = document.querySelectorAll('.card, .activity-card, .music-track')
+    // 为主要卡片添加3D悬停效果（排除音乐播放相关元素）
+    const majorCards = document.querySelectorAll('.card, .activity-card')
     majorCards.forEach(card => {
-      card.addEventListener('mouseenter', (e) => {
-        // 确保只对卡片容器本身应用效果，停止事件冒泡
-        if (e.target === card) {
-          e.target.style.transform = 'perspective(1000px) rotateX(8deg) rotateY(8deg) scale(1.01)'
-        }
-      })
-      
-      card.addEventListener('mouseleave', (e) => {
-        if (e.target === card) {
-          e.target.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)'
-        }
-      })
-      
-      card.addEventListener('mousemove', (e) => {
-        // 只对卡片容器应用，增加倾斜角度到15度
-        if (e.target === card) {
-          const rect = e.target.getBoundingClientRect()
-          const centerX = rect.left + rect.width / 2
-          const centerY = rect.top + rect.height / 2
-          
-          // 增加倾斜系数，最大角度约为 ±15度
-          const rotateX = Math.max(-15, Math.min(15, (e.clientY - centerY) / 8))
-          const rotateY = Math.max(-15, Math.min(15, (centerX - e.clientX) / 8))
-          
-          e.target.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.01)`
-        }
-      })
+      // 确保不是音乐播放器或音乐轨道
+      if (!card.closest('.audio-player') && !card.classList.contains('music-track')) {
+        card.addEventListener('mouseenter', (e) => {
+          // 确保只对卡片容器本身应用效果，停止事件冒泡
+          if (e.target === card) {
+            e.target.style.transform = 'perspective(1000px) rotateX(5deg) rotateY(5deg) scale(1.01)'
+          }
+        })
+        
+        card.addEventListener('mouseleave', (e) => {
+          if (e.target === card) {
+            e.target.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)'
+          }
+        })
+        
+        card.addEventListener('mousemove', (e) => {
+          // 只对卡片容器应用，调整倾斜角度到9度
+          if (e.target === card) {
+            const rect = e.target.getBoundingClientRect()
+            const centerX = rect.left + rect.width / 2
+            const centerY = rect.top + rect.height / 2
+            
+            // 倾斜系数调整，最大角度约为 ±9度
+            const rotateX = Math.max(-9, Math.min(9, (e.clientY - centerY) / 12))
+            const rotateY = Math.max(-9, Math.min(9, (centerX - e.clientX) / 12))
+            
+            e.target.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.01)`
+          }
+        })
+      }
     })
   }
 

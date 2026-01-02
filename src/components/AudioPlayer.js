@@ -47,9 +47,21 @@ export class AudioPlayer {
   setupEventListeners() {
     const playPauseBtn = document.getElementById('play-pause')
     const stopBtn = document.getElementById('stop')
+    const progressBar = document.querySelector('.progress-bar')
 
     playPauseBtn?.addEventListener('click', () => this.togglePlayPause())
     stopBtn?.addEventListener('click', () => this.stop())
+
+    // 进度条点击跳转
+    progressBar?.addEventListener('click', (e) => {
+      if (this.currentAudio && this.currentAudio.duration) {
+        const rect = progressBar.getBoundingClientRect()
+        const clickX = e.clientX - rect.left
+        const percentage = clickX / rect.width
+        const newTime = percentage * this.currentAudio.duration
+        this.currentAudio.currentTime = newTime
+      }
+    })
 
     // 为所有播放按钮添加事件监听器
     document.addEventListener('click', (e) => {
@@ -65,6 +77,7 @@ export class AudioPlayer {
     // 停止当前播放的音乐
     if (this.currentAudio) {
       this.currentAudio.pause()
+      this.currentAudio.currentTime = 0
       this.currentAudio = null
     }
 
@@ -88,13 +101,20 @@ export class AudioPlayer {
       this.stop()
     })
 
+    this.currentAudio.addEventListener('error', (e) => {
+      console.error('Audio playback error:', e)
+      this.stop()
+    })
+
     // 开始播放
-    this.currentAudio.play()
-    this.isPlaying = true
-    this.updatePlayPauseButton()
-    
-    // 显示播放器
-    this.showPlayer()
+    this.currentAudio.play().then(() => {
+      this.isPlaying = true
+      this.updatePlayPauseButton()
+      this.showPlayer()
+    }).catch((error) => {
+      console.error('Failed to play audio:', error)
+      this.stop()
+    })
   }
 
   togglePlayPause() {
