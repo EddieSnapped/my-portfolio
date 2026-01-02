@@ -125,8 +125,12 @@ export class AudioPlayer {
 
     this.currentAudio.addEventListener('error', (e) => {
       console.error('音频文件加载失败:', e)
-      this.updatePlayerInfo('音频文件加载失败')
+      console.error('尝试的路径:', trackPath)
+      this.updatePlayerInfo('音频文件不可用')
     })
+
+    // 添加加载状态反馈
+    this.updatePlayerInfo('正在加载...')
 
     // 开始播放
     this.currentAudio.play().then(() => {
@@ -136,7 +140,9 @@ export class AudioPlayer {
       console.log('音频播放开始')
     }).catch((error) => {
       console.error('播放失败:', error)
-      this.updatePlayerInfo('播放失败')
+      // 可能是自动播放策略限制，显示友好提示
+      this.updatePlayerInfo('点击播放音频')
+      this.showPlayer()
     })
   }
 
