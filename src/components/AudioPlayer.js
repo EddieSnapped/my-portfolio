@@ -101,40 +101,14 @@ export class AudioPlayer {
       this.currentAudio = null
     }
 
-    // 检查音频文件路径并尝试多种格式
-    const possiblePaths = [
-      trackPath,
-      trackPath.replace('/src/', '/'),
-      trackPath.replace('./src/', './'),
-      trackPath.replace('/src/assets/', '/assets/'),
-      trackPath.replace('./src/assets/', './assets/'),
-      trackPath.replace('./', '/'),
-      `./assets/music/${trackPath.split('/').pop()}`,
-      `./src/assets/music/${trackPath.split('/').pop()}`,
-      `/assets/music/${trackPath.split('/').pop()}`
-    ]
-
     // 创建新的音频对象
-    this.currentAudio = new Audio()
+    this.currentAudio = new Audio(trackPath)
     this.currentTrack = trackTitle
 
     // 更新UI
     this.updatePlayerInfo(trackTitle)
+    console.log(`加载音频: ${trackPath}`)
     
-    // 尝试加载音频文件
-    let pathIndex = 0
-    const tryNextPath = () => {
-      if (pathIndex >= possiblePaths.length) {
-        console.error('无法加载音频文件:', trackPath)
-        this.updatePlayerInfo('音频文件加载失败')
-        return
-      }
-
-      this.currentAudio.src = possiblePaths[pathIndex]
-      console.log(`尝试加载音频路径: ${possiblePaths[pathIndex]}`)
-      pathIndex++
-    }
-
     // 设置音频事件监听器
     this.currentAudio.addEventListener('loadedmetadata', () => {
       this.updateTotalTime()
@@ -150,24 +124,20 @@ export class AudioPlayer {
     })
 
     this.currentAudio.addEventListener('error', (e) => {
-      console.warn(`音频路径 ${this.currentAudio.src} 加载失败，尝试下一个路径`)
-      tryNextPath()
+      console.error('音频文件加载失败:', e)
+      this.updatePlayerInfo('音频文件加载失败')
     })
 
-    this.currentAudio.addEventListener('canplay', () => {
-      // 开始播放
-      this.currentAudio.play().then(() => {
-        this.isPlaying = true
-        this.updatePlayPauseButton()
-        this.showPlayer()
-      }).catch((error) => {
-        console.error('播放失败:', error)
-        this.updatePlayerInfo('播放失败')
-      })
+    // 开始播放
+    this.currentAudio.play().then(() => {
+      this.isPlaying = true
+      this.updatePlayPauseButton()
+      this.showPlayer()
+      console.log('音频播放开始')
+    }).catch((error) => {
+      console.error('播放失败:', error)
+      this.updatePlayerInfo('播放失败')
     })
-
-    // 开始尝试第一个路径
-    tryNextPath()
   }
 
   togglePlayPause() {
