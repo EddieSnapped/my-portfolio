@@ -34,18 +34,21 @@ npm run preview
 ### File Structure
 - `src/index.html` - Main entry point with all content sections (English-only)
 - `src/styles/pages.css` - Complete styling with CSS custom properties and CSS icons
-- `src/main.js` - Tab navigation logic
-- `assets/images/` - Extracted project images from PDF documents
+- `src/components/AudioPlayer.js` - Audio playback functionality
+- `src/main.js` - Tab navigation and app initialization
+- `src/assets/images/` - Project images (photos, diagrams, screenshots)
+- `src/assets/music/` - MP3 audio files for music technology section
 - `dist/` - Built production files
-- `TODO.md` - Real-time project progress tracking
 - `vercel.json` - Deployment configuration
 
 ### Key Features
 - **Tab Navigation**: Three sections (Technology, Performance, Music Tech)
+- **Interactive Cards**: Clickable cards with smooth scroll navigation to project details
 - **Responsive Design**: Grid layouts that adapt to different screen sizes
 - **CSS Custom Properties**: Centralized theming via CSS variables
 - **CSS Icons**: Pure geometric shapes instead of Unicode emojis
-- **Real Images**: Extracted from PDF documents and integrated
+- **Real Images**: Extracted from documents and integrated with multiple layout variants
+- **Audio Integration**: Embedded music player with MP3 playback capabilities
 - **Internationalized**: English-only content for university applications
 
 ### Content Modification
@@ -61,23 +64,62 @@ npm run preview
 - **Layout**: CSS Grid for responsive layouts
 - **Icons**: CSS-based geometric shapes (piano-icon, clarinet-icon, etc.)
 - **Components**: Card-based design with consistent spacing
+- **Audio Player**: Fixed-position player with progress bar and controls
+
+### Audio System
+- **Files**: MP3 format stored in `src/assets/music/`
+- **Player**: AudioPlayer.js class with play/pause/stop/progress controls
+- **Integration**: Preload links in HTML head ensure Vite includes files in build
+- **Paths**: Relative paths `./assets/music/` compatible with Vite's `base: './'` config
+- **Build**: Custom `assetFileNames` configuration preserves directory structure
 
 ### Deployment Status
 - **Repository**: GitHub (EddieSnapped/my-portfolio.git)
 - **Hosting**: Vercel with auto-deployment
-- **URL**: Stable (autoAlias disabled)
-- **Build**: Vite with relative paths for portability
-- **Current Issue**: Images not loading in production (being resolved)
+- **URL**: https://my-portfolio-stoneli.vercel.app/
+- **Build**: Vite with relative paths (`base: './'`) for portability
+- **Assets**: All static files properly configured for production deployment
+
+### Critical Deployment Lessons
+- **Audio Files**: Must be explicitly referenced in HTML (`<link rel="preload">`) for Vite to include them in build
+- **Path Configuration**: Use relative paths (`./assets/`) not absolute (`/assets/`) to match Vite's `base: './'` setting
+- **Asset Configuration**: Custom `assetFileNames` in `vite.config.js` preserves directory structure in production
+- **Build Verification**: Always check `dist/` folder structure matches expected paths before deployment
+- **Static Assets**: Vite only bundles referenced assets; dynamic imports need explicit configuration
 
 ### Testing
 - Test in multiple browsers (Chrome, Safari, Firefox)
 - Verify responsive behavior on different screen sizes  
 - Check tab navigation functionality
-- **Verify image loading in both development and production**
-- **Test CSS icons display correctly**
+- **Test audio playback in both development and production environments**
+- **Verify card click navigation and smooth scrolling**
+- **Check all image assets load correctly**
+- **Test audio player controls and progress bar**
 
-## Current Development Focus
-Check `TODO.md` for real-time status of ongoing work. Current priority is resolving image display issues in Vercel production deployment.
+## Current Status
+Portfolio is fully functional with interactive navigation, diverse layout variants, and working audio integration. All assets properly configured for production deployment.
+
+## Important Vite Configuration
+```javascript
+// vite.config.js
+export default defineConfig({
+  root: 'src',
+  base: './', // Critical for relative paths
+  build: {
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name && assetInfo.name.endsWith('.mp3')) {
+            return 'assets/music/[name].[ext]' // Preserve music directory
+          }
+          return 'assets/[name]-[hash].[ext]'
+        }
+      }
+    }
+  },
+  assetsInclude: ['**/*.mp3'] // Include audio files
+})
+```
 
 ## Commands Reference
 ```bash
