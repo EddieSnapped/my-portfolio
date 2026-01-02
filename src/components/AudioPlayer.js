@@ -11,8 +11,28 @@ export class AudioPlayer {
   }
 
   init() {
+    // 检查浏览器音频支持
+    if (!window.Audio) {
+      console.error('此浏览器不支持Web Audio API')
+      this.showUnsupportedMessage()
+      return
+    }
+
     this.createPlayerControls()
     this.setupEventListeners()
+    console.log('AudioPlayer initialized successfully')
+  }
+
+  showUnsupportedMessage() {
+    const messageHTML = `
+      <div class="audio-player unsupported" id="audio-player">
+        <div class="player-info">
+          <div class="track-title">音频播放不支持</div>
+          <div class="track-artist">请使用现代浏览器</div>
+        </div>
+      </div>
+    `
+    document.body.insertAdjacentHTML('beforeend', messageHTML)
   }
 
   createPlayerControls() {
@@ -81,16 +101,39 @@ export class AudioPlayer {
       this.currentAudio = null
     }
 
+    // 检查音频文件路径并尝试多种格式
+    const possiblePaths = [
+      trackPath,
+      trackPath.replace('./src/', './'),
+      trackPath.replace('./', './src/'),
+      trackPath.replace('./assets/', './src/assets/')
+    ]
+
     // 创建新的音频对象
-    this.currentAudio = new Audio(trackPath)
+    this.currentAudio = new Audio()
     this.currentTrack = trackTitle
 
     // 更新UI
     this.updatePlayerInfo(trackTitle)
     
+    // 尝试加载音频文件
+    let pathIndex = 0
+    const tryNextPath = () => {
+      if (pathIndex >= possiblePaths.length) {
+        console.error('无法加载音频文件:', trackPath)
+        this.updatePlayerInfo('音频文件加载失败')
+        return
+      }
+
+      this.currentAudio.src = possiblePaths[pathIndex]
+      console.log(`尝试加载音频路径: ${possiblePaths[pathIndex]}`)
+      pathIndex++
+    }
+
     // 设置音频事件监听器
     this.currentAudio.addEventListener('loadedmetadata', () => {
       this.updateTotalTime()
+      console.log('音频文件加载成功')
     })
 
     this.currentAudio.addEventListener('timeupdate', () => {
@@ -102,19 +145,24 @@ export class AudioPlayer {
     })
 
     this.currentAudio.addEventListener('error', (e) => {
-      console.error('Audio playback error:', e)
-      this.stop()
+      console.warn(`音频路径 ${this.currentAudio.src} 加载失败，尝试下一个路径`)
+      tryNextPath()
     })
 
-    // 开始播放
-    this.currentAudio.play().then(() => {
-      this.isPlaying = true
-      this.updatePlayPauseButton()
-      this.showPlayer()
-    }).catch((error) => {
-      console.error('Failed to play audio:', error)
-      this.stop()
+    this.currentAudio.addEventListener('canplay', () => {
+      // 开始播放
+      this.currentAudio.play().then(() => {
+        this.isPlaying = true
+        this.updatePlayPauseButton()
+        this.showPlayer()
+      }).catch((error) => {
+        console.error('播放失败:', error)
+        this.updatePlayerInfo('播放失败')
+      })
     })
+
+    // 开始尝试第一个路径
+    tryNextPath()
   }
 
   togglePlayPause() {
