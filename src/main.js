@@ -1,12 +1,14 @@
 import { NavigationManager } from './components/NavigationManager.js'
 import { SimpleVisualization } from './components/SimpleVisualization.js'
 import { EffectsManager } from './components/EffectsManager.js'
+import { AudioPlayer } from './components/AudioPlayer.js'
 
 class PortfolioApp {
   constructor() {
     this.navigation = null
     this.visualization = null
     this.effects = null
+    this.audioPlayer = null
     this.init()
   }
 
@@ -22,13 +24,14 @@ class PortfolioApp {
       // Initialize core components
       this.navigation = new NavigationManager()
       this.effects = new EffectsManager()
+      this.audioPlayer = new AudioPlayer()
       
       // Initialize visualization after a short delay
       setTimeout(() => {
         this.visualization = new SimpleVisualization()
       }, 300)
 
-      console.log('✨ Portfolio application with dynamic effects initialized successfully')
+      console.log('✨ Portfolio application with audio player initialized successfully')
       
     } catch (error) {
       console.error('Failed to initialize portfolio application:', error)
@@ -60,6 +63,7 @@ class PortfolioApp {
       this.effects.destroy()
       this.effects = null
     }
+    this.audioPlayer = null
   }
 }
 

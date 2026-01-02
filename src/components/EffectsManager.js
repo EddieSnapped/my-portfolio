@@ -176,9 +176,9 @@ export class EffectsManager {
 
   // 动画入场设置
   setupAnimatedEntries() {
-    // 为卡片添加3D悬停效果
-    const cards = document.querySelectorAll('.card, .activity-card')
-    cards.forEach(card => {
+    // 为大卡片添加3D悬停效果（只作用于主要卡片容器）
+    const majorCards = document.querySelectorAll('.card, .activity-card, .project-story')
+    majorCards.forEach(card => {
       card.addEventListener('mouseenter', (e) => {
         e.target.style.transform = 'perspective(1000px) rotateX(5deg) rotateY(5deg) scale(1.02)'
       })
