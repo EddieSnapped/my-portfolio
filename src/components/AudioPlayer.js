@@ -104,9 +104,14 @@ export class AudioPlayer {
     // 检查音频文件路径并尝试多种格式
     const possiblePaths = [
       trackPath,
+      trackPath.replace('/src/', '/'),
       trackPath.replace('./src/', './'),
-      trackPath.replace('./', './src/'),
-      trackPath.replace('./assets/', './src/assets/')
+      trackPath.replace('/src/assets/', '/assets/'),
+      trackPath.replace('./src/assets/', './assets/'),
+      trackPath.replace('./', '/'),
+      `./assets/music/${trackPath.split('/').pop()}`,
+      `./src/assets/music/${trackPath.split('/').pop()}`,
+      `/assets/music/${trackPath.split('/').pop()}`
     ]
 
     // 创建新的音频对象
