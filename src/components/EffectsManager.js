@@ -182,7 +182,7 @@ export class EffectsManager {
       card.addEventListener('mouseenter', (e) => {
         // 确保只对卡片容器本身应用效果，停止事件冒泡
         if (e.target === card) {
-          e.target.style.transform = 'perspective(1000px) rotateX(2deg) rotateY(2deg) scale(1.01)'
+          e.target.style.transform = 'perspective(1000px) rotateX(8deg) rotateY(8deg) scale(1.01)'
         }
       })
       
@@ -193,15 +193,15 @@ export class EffectsManager {
       })
       
       card.addEventListener('mousemove', (e) => {
-        // 只对卡片容器应用，减少倾斜角度
+        // 只对卡片容器应用，增加倾斜角度到15度
         if (e.target === card) {
           const rect = e.target.getBoundingClientRect()
           const centerX = rect.left + rect.width / 2
           const centerY = rect.top + rect.height / 2
           
-          // 减少倾斜系数，从 /10 改为 /20，最大角度约为 ±3度
-          const rotateX = Math.max(-3, Math.min(3, (e.clientY - centerY) / 20))
-          const rotateY = Math.max(-3, Math.min(3, (centerX - e.clientX) / 20))
+          // 增加倾斜系数，最大角度约为 ±15度
+          const rotateX = Math.max(-15, Math.min(15, (e.clientY - centerY) / 8))
+          const rotateY = Math.max(-15, Math.min(15, (centerX - e.clientX) / 8))
           
           e.target.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.01)`
         }
